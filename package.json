@@ -2,7 +2,7 @@
   "name": "@myx0m0p/jito-sdk",
   "author": "Jito Team <team@jito.wtf>",
   "license": "Apache-2.0",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "prepublish": "tsc",
