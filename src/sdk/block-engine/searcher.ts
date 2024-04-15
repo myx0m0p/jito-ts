@@ -326,12 +326,12 @@ export class SearcherClient {
  * @param grpcOptions - Optional configuration options for the gRPC client
  * @returns SearcherClient - An instance of the SearcherClient
  */
-export const searcherClient = (
+export const searcherClient = async (
   url: string,
   authKeypair: Keypair,
   grpcOptions?: Partial<ChannelOptions>
-): SearcherClient => {
-  const authProvider = new AuthProvider(
+): Promise<SearcherClient> => {
+  const authProvider = await AuthProvider.create(
     new AuthServiceClient(url, ChannelCredentials.createSsl()),
     authKeypair
   );
