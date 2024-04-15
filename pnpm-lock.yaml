@@ -9,8 +9,8 @@ dependencies:
     specifier: ^1.10.6
     version: 1.10.6
   '@noble/ed25519':
-    specifier: ^2.1.0
-    version: 2.1.0
+    specifier: ^1.7.1
+    version: 1.7.3
   '@solana/web3.js':
     specifier: ^1.91.4
     version: 1.91.4
@@ -185,8 +185,8 @@ packages:
       '@noble/hashes': 1.4.0
     dev: false
 
-  /@noble/ed25519@2.1.0:
-    resolution: {integrity: sha512-KM4qTyXPinyCgMzeYJH/UudpdL+paJXtY3CHtHYZQtBkS8MZoPr4rOikZllIutJe0d06QDQKisyn02gxZ8TcQA==}
+  /@noble/ed25519@1.7.3:
+    resolution: {integrity: sha512-iR8GBkDt0Q3GyaVcIu7mSsVIqnFbkbRzGLWlvhwunacoLwt4J3swfKhfaM6rN6WY+TBGoYT1GtT1mIh2/jGbRQ==}
     dev: false
 
   /@noble/hashes@1.4.0:
