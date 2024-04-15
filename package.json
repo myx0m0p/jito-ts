@@ -1,43 +1,37 @@
 {
+  "name": "@myx0m0p/jito-sdk",
   "author": "Jito Team <team@jito.wtf>",
   "license": "Apache-2.0",
-  "name": "jito-ts",
-  "version": "3.0.1",
+  "version": "0.0.1",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "prepublish": "tsc",
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "dependencies": {
-    "@grpc/grpc-js": "^1.8.13",
-    "@noble/ed25519": "^1.7.1",
-    "@solana/web3.js": "~1.77.3",
-    "agentkeepalive": "^4.3.0",
-    "dotenv": "^16.0.3",
-    "jayson": "^4.0.0",
-    "node-fetch": "^2.6.7",
-    "superstruct": "^1.0.3"
+    "@grpc/grpc-js": "^1.10.6",
+    "@noble/ed25519": "^2.1.0",
+    "@solana/web3.js": "^1.91.4",
+    "long": "^5.2.3",
+    "protobufjs": "^7.2.6"
   },
   "devDependencies": {
-    "@types/google-protobuf": "^3.15.6",
-    "@types/node": "^14.11.2",
-    "@types/node-fetch": "^2.6",
-    "grpc-tools": "^1.12.3",
-    "gts": "^3.1.1",
-    "protoc-gen-ts": "^0.8.5",
-    "ts-proto": "~1.138.0",
-    "ts-protoc-gen": "~0.15.0",
-    "typescript": "^4.9.4"
+    "@types/google-protobuf": "^3.15.12",
+    "grpc-tools": "^1.12.4",
+    "gts": "^5.3.0",
+    "protoc-gen-ts": "^0.8.7",
+    "ts-proto": "^1.172.0",
+    "ts-protoc-gen": "^0.15.0",
+    "typescript": "^5.4.5"
   },
   "scripts": {
     "gen-block-engine": "./scripts/gen-block-engine-protos submods/mev-protos",
     "gen-geyser": "./scripts/gen-geyser-protos submods/geyser-grpc-plugin/proto/proto",
     "lint": "gts lint",
     "clean": "gts clean",
-    "compile": "tsc",
-    "fix": "gts fix",
-    "prepare": "yarn run compile",
-    "pretest": "yarn run compile",
-    "posttest": "yarn run lint",
-    "run:backrun": "yarn tsc && node dist/examples/backrun/index",
-    "run:geyser": "yarn tsc && node dist/examples/geyser/index"
-  }
+    "build": "tsc",
+    "fix": "gts fix"
+  },
+  "packageManager": "pnpm@8.15.7"
 }
