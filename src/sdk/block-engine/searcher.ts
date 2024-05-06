@@ -277,8 +277,14 @@ export class SearcherClient {
    * @returns A function to cancel the subscription
    */
   onBundleResult(
-    successCallback: (bundleResult: BundleResult) => void,
-    errorCallback: (e: Error) => void
+    successCallback: (
+      bundleResult: BundleResult,
+      stream: ClientReadableStream<BundleResult>
+    ) => void,
+    errorCallback: (
+      e: Error,
+      stream: ClientReadableStream<BundleResult>
+    ) => void
   ): () => void {
     const stream: ClientReadableStream<BundleResult> =
       this.client.subscribeBundleResults({});
@@ -286,11 +292,11 @@ export class SearcherClient {
     stream.on('readable', () => {
       const msg = stream.read(1);
       if (msg) {
-        successCallback(msg);
+        successCallback(msg, stream);
       }
     });
     stream.on('error', e => {
-      errorCallback(new Error(`Stream error: ${e.message}`));
+      errorCallback(new Error(`Stream error: ${e.message}`), stream);
     });
 
     return stream.cancel;
